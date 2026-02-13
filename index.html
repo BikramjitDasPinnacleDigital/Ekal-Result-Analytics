@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background: url('https://webby-template-dot-com.s3.eu-north-1.amazonaws.com/assets/2074129219.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        .btn-container {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 40px;   /* Bigger padding */
+            font-size: 22px;      /* Bigger font */
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin: 0 15px;
+            min-width: 250px;
+            font-weight: bold;     /* Fixed width */
+        }
+        button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        iframe {
+            display: none;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Student Performance Dashboard</h1>
+
+    <div class="btn-container">
+        <button onclick="showDashboard('overall')">Overall Analytics</button>
+        <button onclick="showDashboard('subject')">Subject-wise Analytics</button>
+    </div>
+
+    <iframe 
+        id="overallFrame"
+        title="Overall Analytics"
+        width="1240" 
+        height="541.25" 
+        src="https://app.powerbi.com/view?r=eyJrIjoiMmNlYjkyMzMtMmI5YS00YzMwLWI5MjktYmNjZmQyMzc0MjVjIiwidCI6ImVkNDVjYWM1LTYzMDYtNDE5ZC1iMTg2LWFkOTgwMGE5NWI2OSJ9&pageName=c704dbbd96c122073abe"
+        #src="https://app.powerbi.com/view?r=eyJrIjoiZDM1YWM0OGMtMjRmZC00MmRjLTg0NWEtZWIyMDM3M2ZjY2ExIiwidCI6ImVkNDVjYWM1LTYzMDYtNDE5ZC1iMTg2LWFkOTgwMGE5NWI2OSJ9&pageName=b5c205ffd34c6db10904"
+        allowfullscreen="true">
+    </iframe>
+
+    <iframe 
+        id="subjectFrame"
+        title="Subject-wise Analytics"
+        width="1240" 
+        height="541.25" 
+        src="https://app.powerbi.com/view?r=eyJrIjoiMmNlYjkyMzMtMmI5YS00YzMwLWI5MjktYmNjZmQyMzc0MjVjIiwidCI6ImVkNDVjYWM1LTYzMDYtNDE5ZC1iMTg2LWFkOTgwMGE5NWI2OSJ9&pageName=5be59f5fe996a8c936b3"
+        #src="https://app.powerbi.com/view?r=eyJrIjoiZDM1YWM0OGMtMjRmZC00MmRjLTg0NWEtZWIyMDM3M2ZjY2ExIiwidCI6ImVkNDVjYWM1LTYzMDYtNDE5ZC1iMTg2LWFkOTgwMGE5NWI2OSJ9&pageName=18e4d9b84d9a0d4ebe8d"  
+        allowfullscreen="true">
+    </iframe>
+
+    <script>
+        function showDashboard(type) {
+            document.getElementById('overallFrame').style.display = 'none';
+            document.getElementById('subjectFrame').style.display = 'none';
+
+            if (type === 'overall') {
+                document.getElementById('overallFrame').style.display = 'block';
+            } else if (type === 'subject') {
+                document.getElementById('subjectFrame').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
